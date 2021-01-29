@@ -1,0 +1,3 @@
+## Os aprendizados de Laís de Jesus - Semana Onboarding
+
+Da parte técnica eu já tinha tido contato com os assuntos iniciais, mas ainda assim foi possível organizar e entender mais a fundo o que é o terminal, git e git hub e VSCode. Foi ótimo aprender as manhas que tem em cada programa. Da parte não técnica foi legal entender processos de aprendizado e a se organizar melhor, usando recursos mais efetivos ~ eu achava que era organizada antes da Labenu kkkkcry ~. **De tudo que aprendi quero destacar** o como lidar com a frustração, as dicas compatilhadas foram ótimas espero aplicar com assertividade nos dias de desespero. 
