@@ -36,6 +36,7 @@ a {
     background-color:#f77f00;
     padding: 25px 50px;
     text-align: center;
+    
 }
 
 .rodape {
@@ -49,6 +50,13 @@ a {
 img {
     width: 25px;
     
+}
+
+button {
+    background-color:#003049;
+    color: white;
+    padding: 5px;
+    margin-top:px;
 }
 
 
