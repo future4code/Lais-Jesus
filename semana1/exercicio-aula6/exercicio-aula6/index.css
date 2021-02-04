@@ -7,7 +7,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
@@ -20,8 +19,6 @@ h2 {
 input {
     height: 20px;
     width: 500px;
-    border: none ;
-    border-bottom: black double;
 }
 
 button:focus {
@@ -29,16 +26,16 @@ button:focus {
 }
 
 img {
-    width: 50px;
+    width: 100px;
 }
 
 div>p:first-child {
     display: inline;
 }
 
-/* div img {
+div img {
     background: black;
-} */
+}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -47,8 +44,6 @@ div>p:first-child {
     border-radius: 5px;
     font-size: 20px;
     color: white;
-    position:relative;
-    top: 200px;
 }
 
 .botao-amarelo:hover {
@@ -58,15 +53,10 @@ div>p:first-child {
 .container {
     height: 500px;
     text-align: center;
-    padding-top: 50px
 }
 
 .icone {
     height: 15px;
-    width:auto;
-}
-.icone:hover {
-    opacity: 0.5;
 }
 
 
@@ -79,8 +69,6 @@ div>p:first-child {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding: 70px 645px;
-
 }
 
 #container-de-descricao>ol {
@@ -111,8 +99,6 @@ div:last-child {
 
 table {
     width: 60%;
-    text-align:center;
-    margin:auto;
 }
 
 td button {
@@ -137,18 +123,8 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
-    position: relative;
-    left: 750px;
-    top: 100px;
-
 }
 
 #back-button:hover {
     background-color: #635a3d
-}
-button:hover {
-    background-color: #635a3d
-}
-button:link {
-    color:white;
 }
