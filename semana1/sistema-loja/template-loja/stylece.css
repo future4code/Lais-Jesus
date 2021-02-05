@@ -35,7 +35,7 @@ a {
 .meio {
     background-color:#f77f00;
     padding: 50px 50px;
-    
+    height: 800px;
     text-align: center;
 }
 
@@ -43,8 +43,15 @@ h2 {
     color: white;
 }
 
-tr,td   {
+table  {
     background-color: white;
+    display: block;
+    width:600px;
+    margin:auto;
+}
+th {
+    background-color:#003049;
+    color:white;
 }
 
 img {

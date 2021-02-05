@@ -16,6 +16,7 @@ body {
     background-color: #fcbf49;
     padding: 15px;
     text-align: center;
+    
 }
 
 a:link {
@@ -31,47 +32,68 @@ a {
     padding: 0px 10px 0px 40px;
 }
 
+.meio {
+    background-color:#f77f00;
+    padding: 10px 0px;
+    height: 800px;
+    text-align: center;
+}
+
 h2 {
     color: white;
-    text-align: center;
+}
+
+h3 {
+    background-color: #fcbf49;  
+}
+
+table  {
+    background-color: white;
+    display: block;
+    width:700px;
+    margin:auto;
+}
+th {
+    background-color:#003049;
+    color:white;
+}
+#valorfinal {
+   background-color: #fcbf49;
+}
+
+img {
+    width:105px;
 }
 .form {
     background-color: #f77f00;
     width: 400px;
-    margin: auto;
+    margin:auto;
 }
-.meio {
-    background-color:#f77f00;
-    padding: 15px 50px;
-    height: 800px;
+
+label {
+    justify-content: left;
 }
-input {
-    padding-right:15px;
-    align-items: center;
-}
+
 .um {
     position: relative;
-    left: 62px;
+    left: 85px;
 }
 .dois {
     position: relative;
-    left: 7px; 
+    left: 23px; 
 }
 .tres{
     position: relative;
-    left: 55px; 
+    left: 47px; 
+}
+.cinco{
+    position: relative;
+    left: 48px;
 }
 
 button {
     background-color:#003049;
     color: white;
     padding: 5px;
-    margin-top:5px;
-}
-
-.btnpg {
-    background-color:#003049;
-    color: white;
-    padding: 5px;
-    margin-top:5px;
+    margin-top:px;
 }
