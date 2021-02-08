@@ -1,0 +1,177 @@
+body {
+    margin:0;
+    padding:0; 
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+header { 
+    background-color:black;
+    color:white;
+    text-align: center;
+}
+.folder {
+    background:center no-repeat;
+    background-size: cover;
+    height: 70px;
+    position:relative;
+    left: 200px;   
+}
+.nome {
+    position:relative;
+    top: 50px;
+
+}
+nav {
+    background-color:#632D6b ;
+    height: 50px;
+    padding: 20px 50px 20px;
+    text-align: center;
+}
+a {
+    background-color: :#632D6b;
+    width: 150px;
+    margin: 5px;
+    padding: 20px 20px 0px;
+    height: 50px;
+    color: white;
+    display: inline-block;
+    margin:0 auto;
+    font-size:large;
+    text-decoration:none;
+}
+a:hover {
+    background-color: #94439f;
+    position: relative;
+    bottom:10px;
+}
+.main {
+    background-color:#666464;
+    padding-left:400px;
+    padding-bottom: 30px;;
+    
+}
+.redes-sociais{
+    
+    display:block;
+    margin:auto;
+}
+.redes-sociais__link{
+    width: 20%;
+    padding:2rem 0rem;
+    color:white; 
+    margin-top:3rem;   
+}
+
+.redes-sociais__img{
+    margin-bottom: 1rem;
+}
+
+.redes-sociais__titulo{
+    font-size:1.6rem;  
+    margin-bottom: 1rem;  
+}
+
+ 
+footer {
+    background-color: #632D6b;
+    padding: 30px 50px;
+    position: relative;
+    /* top:50px; */
+    color: white;
+}
+input{
+    display:inline;
+    margin:auto;
+
+}
+
+h5 {
+    font-size:1rem;
+    padding-bottom:20px;
+}
+.msg {
+    padding: 0px 50px;
+}
+
+.copyright {
+    color:#C4C4C4;
+    font-weight: lighter;
+    padding: 2rem 0;
+    display: block;
+    margin:auto;
+    text-align: center;
+
+}
+
+/* HEADER BANNER */
+
+
+
+/* .banner-titulo{
+    font-size:3rem;
+}
+
+.banner-subtitulo{
+    font-size:2.3rem;
+    margin-bottom:2.813rem;    
+} */
+
+/* SEÇÃO SOBRE */
+/* .sobre-flex{
+    display: flex;
+    margin-top:1.5rem;
+    line-height:1.5;
+} */
+
+
+
+/* .sobre-descricao, .sobre-habilidades{
+    width:70%;
+    display: inline-block;
+} */
+
+/* .sobre-habilidades__titulo{
+    font-size:1.3rem;
+    margin-bottom: 1rem;  
+}
+
+.sobre-descricao__texto{
+    margin-bottom: 2.813rem;
+    font-size:1rem;
+    text-align: justify;
+}
+
+.sobre-habilidades__lista{
+    padding-left: 1.3rem;  
+    line-height: 1.7; 
+}
+
+/* REDES SOCIAIS */
+/* .footer{
+    text-align: center;    
+}
+
+.redes-sociais{
+    display: flex;
+    justify-content: space-around;
+}
+.redes-sociais__link{
+    width: 20%;
+    background-color:#043C5C;
+    padding:2rem 0rem;
+    color:white; 
+    margin-top:3rem;   
+}
+
+.redes-sociais__img{
+    margin-bottom: 1rem;
+}
+
+.redes-sociais__titulo{
+    font-size:1.6rem;  
+    margin-bottom: 1rem;  
+}
+
+.footer-copyright{
+    
+} */ 

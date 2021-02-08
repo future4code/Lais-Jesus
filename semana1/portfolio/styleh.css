@@ -1,0 +1,119 @@
+body {
+    margin:0;
+    padding:0; 
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+header { 
+    background-color:black;
+    color:white;
+    text-align: center;
+}
+.folder {
+    background:center no-repeat;
+    background-size: cover;
+    height: 70px;
+    position:relative;
+    left: 200px;   
+}
+.nome {
+    position:relative;
+    top: 50px;
+
+}
+nav {
+    background-color:#632D6b ;
+    height: 50px;
+    padding: 20px 50px 20px;
+    text-align: center;
+}
+a {
+    background-color: :#632D6b;
+    width: 150px;
+    margin: 5px;
+    padding: 20px 20px 0px;
+    height: 50px;
+    color: white;
+    display: inline-block;
+    margin:0 auto;
+    font-size:large;
+    text-decoration:none;
+}
+a:hover {
+    background-color: #94439f;
+    position: relative;
+    bottom:10px;
+}
+.sobre-titulo{
+    font-size: 2.rem;
+    color: Black;
+    margin: 30px 0px; 
+    text-align: center;
+
+}
+.multi, .criatividade, .proatividade, .curiosidade{
+    background-color: #C4C4C4;
+    padding: 25px 15px;
+    font-size:1rem;
+    text-align: justify; 
+    width: 250px;
+    height: 250px;
+    margin:auto;
+    display:inline-block; 
+    /* position: relative; 
+    right: 20px; */
+}
+
+.multi {
+    position: relative; 
+    left: 180px;  
+}
+
+.criatividade{
+    position: relative; 
+    left: 180px;
+    /* top: 20px; */
+}
+.proatividade {
+    position: relative; 
+    top: 20px;
+    left: 180px;
+}
+
+.curiosidade {
+    position: relative; 
+    bottom:36px;
+    left: 180px;
+}
+
+
+footer {
+    background-color: #632D6b;
+    padding: 30px 50px;
+    position: relative;
+    top:50px;
+    color: white;
+}
+input{
+    display:inline;
+    margin:auto;
+
+}
+
+h5 {
+    font-size:1rem;
+    padding-bottom:20px;
+}
+.msg {
+    padding: 0px 50px;
+}
+
+.copyright {
+    color:#C4C4C4;
+    font-weight: lighter;
+    padding: 2rem 0;
+    display: block;
+    margin:auto;
+    text-align: center;
+
+}
