@@ -72,13 +72,74 @@
 
 // c 
 
-let string = prompt("Escreva uma frase")
+// let string = "Eu sou repetitiva"
 
-function fraseDezVezes (string) {
-    let imprime10 = (string)*10
-    return imprime10
+// function fraseDezVezes (string) {
+//     for (i=1; i<=10; i++){
+//         console.log(string)
+//     }
+// }
+
+// fraseDezVezes(string)
+
+// Exercicio 6
+
+const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// a)
+
+// function qtdadeElementos (array) {
+//     return (array.length)
+// }
+
+// console.log(qtdadeElementos(array))
+
+// b)
+
+let numero
+
+function parOuImpar (numero) {
+    if (numero % 2 === 0) {
+        return true
+    } else {
+        return false
+    }
+}
+// let numero = Number(prompt("Digite um numero"))
+// console.log(parOuImpar(numero))
+
+
+// c)
+// let arrayPar = []
+// function qtdadeNumerosPares (array) {
+//     for (let numero of array) {
+//         if (numero % 2 === 0) {
+//             arrayPar.push(numero)
+//         }
+//     } 
+    
+//     return (arrayPar.length)
+// }
+
+// console.log(qtdadeNumerosPares(array))
+
+// d)
+
+let arrayPar = []
+
+function qtdadeNumerosPares (array) {
+ 
+    
+    for (i=0; i<array.length; i++) {
+        let num = array[i]
+        let ePar = parOuImpar(num)
+        if ( ePar === true) {
+            arrayPar.push(num)
+        }  
+    } 
+    
+    return (arrayPar.length)
 }
 
-let frase = fraseDezVezes()
-console.log(frase)
+console.log(qtdadeNumerosPares(array))
 
