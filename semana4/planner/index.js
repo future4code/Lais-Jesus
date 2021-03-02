@@ -1,7 +1,10 @@
 
 function clique () {
-    const tarefa = document.getElementById("tarefa")
-    const dia = document.getElementById("dias-semanas")
-    console.log(tarefa, dia)
+    let tarefas = document.getElementById("tarefa")
+    let dia = document.getElementById("dias-semana").value  
+
+    document.getElementById(dia).innerHTML +=  `<li> ${tarefas.value} </li>`
+    tarefas.value = ""
 }
+
 
