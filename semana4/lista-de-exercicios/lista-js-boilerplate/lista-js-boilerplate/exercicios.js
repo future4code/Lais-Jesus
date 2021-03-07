@@ -1,13 +1,21 @@
 //Exercício 1
 
 function inverteArray(array) {
+   let arrayInvertido = []
   
+   for (let i=1; i<=array.length; i++) {
+     let n = array.length
+     arrayInvertido.push(array[array.length - i])
+     array.splice(n,1)
+   }
+ 
+   return arrayInvertido
 }
 
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
+   
 }
 
 //Exercício 3
