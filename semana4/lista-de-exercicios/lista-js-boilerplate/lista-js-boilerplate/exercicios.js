@@ -18,7 +18,6 @@ function retornaNumerosParesElevadosADois (array) {
    let paresElevados 
    for(let i of array) {
       if(i % 2 == 0) {
-        console.log(i)
         paresElevados = i*i
         arrayParesElevados2.push(paresElevados)
       }
@@ -29,7 +28,13 @@ function retornaNumerosParesElevadosADois (array) {
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
+   const arrayPares = []
+   for(let i of array) {
+      if(i % 2 == 0) {
+        arrayPares.push(i)
+      }
+   }
+  return arrayPares
 }
 
 //Exercício 4
