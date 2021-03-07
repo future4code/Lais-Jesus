@@ -14,7 +14,16 @@ function inverteArray(array) {
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   
+   const arrayParesElevados2 = []
+   let paresElevados 
+   for(let i of array) {
+      if(i % 2 == 0) {
+        console.log(i)
+        paresElevados = i*i
+        arrayParesElevados2.push(paresElevados)
+      }
+   }
+  return arrayParesElevados2
 }
 
 //Exercício 3
