@@ -87,13 +87,54 @@ function retornaNNumerosPares(n) {
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
-  // implemente sua lógica aqui
+   let resultado = " "
+   if ((a === b) && (b === c)) {
+      resultado =  "Equilátero"
+   } else if ((a === b) && (a !== c)|| (a === c) && (a !== b) || (b === c) && (a !== c)) {
+      resultado = "Isósceles"
+   } else if ((a !== b) && (b !== c)){
+      resultado = "Escaleno"
+   }
+   return resultado
 }
+ 
 
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
+   let numMaior
+   let divMenor
+   let valorDiferenca
+   
+   if (num1 > num2 && (num1 % num2 === 0)) {
+      numMaior = num1
+      divMenor = true
+      valorDiferenca = num1 - num2
+      
+   } else if (num1 > num2 && (num1 % num2 !== 0)) {
+      numMaior = num1
+      divMenor = false
+      valorDiferenca = num1 - num2
+      
+   } else if (num1 < num2 && (num2 % num1 === 0)) {
+      numMaior = num2
+      divMenor = true
+      valorDiferenca = num2 - num1
+      
+   } else if (num1 < num2 && (num2 % num1 !== 0)) {
+      numMaior = num2
+      divMenor = false
+      valorDiferenca = num2 - num1
+   }
+   
+   const objeto = {
+      maiorNumero: numMaior,
+      maiorDivisivelporMenor : divMenor ,
+      diferenca: valorDiferenca,
+   }
+   
+   return objeto
+
 }
 
 // Exercício 10
