@@ -12,21 +12,28 @@ import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 class Post extends React.Component {
   state = {
     curtido: false,
+    descurtido: false,
     numeroCurtidas: 0,
+    numerosDescurtidas: 0,
     comentando: false,
     numeroComentarios: 0
   }
 
   onClickCurtida = () => {
-    const novaCurtida = this.state.numeroCurtidas + 1;
+    let novaCurtida = 0
+    if (!this.state.curtido) {
+      novaCurtida = this.state.numeroCurtidas + 1
+    } else {
+      novaCurtida = this.state.numeroCurtidas - 1
+    }
+
     this.setState({
+      
       curtido:!this.state.curtido,
-      numeroCurtidas: novaCurtida
+      numeroCurtidas: novaCurtida     
+      
     });
-    this.setState({
-      curtido: !this.state.curtido,
-      numeroCurtidas: novaCurtida - 1
-    })
+    
   };
 
   onClickComentario = () => {
@@ -69,7 +76,7 @@ class Post extends React.Component {
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
+          valorContador={this.state.numeroCurtidas }
         />
 
         <IconeComContador
