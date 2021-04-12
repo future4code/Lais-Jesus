@@ -79,7 +79,7 @@ export default function App() {
   const deleteMatches = (id) => {
     if (window.confirm("Deseja mesmo deletar todos os Matches")) {
       axios
-        .delete(
+        .pute(
           "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lais-jesus-cruz/clear",
         )
         .then((res) => {
