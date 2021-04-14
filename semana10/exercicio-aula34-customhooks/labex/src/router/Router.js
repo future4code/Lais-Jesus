@@ -20,15 +20,11 @@ function Router() {
             <HomePage />
         </Route>
 
-        <Route exact path="/trips">
+        <Route exact path="/trips/list">
           <ListTripsPage />
         </Route>
 
-        <Route exact path="/application-form">
-          <ApplicationFormPage />
-        </Route>
-
-        <Route exact path="/application-form">
+        <Route exact path="/trips/application">
           <ApplicationFormPage />
         </Route>
         
@@ -36,15 +32,15 @@ function Router() {
           <LoginPage />
         </Route>
         
-        <Route exact path="/admin">
+        <Route exact path="/admin/trips/list">
           <AdminHomePage />
         </Route>
         
-        <Route exact path="/trip-details">
+        <Route exact path="/admin/trips/:id">
           <TripDetailsPage />
         </Route>
         
-        <Route exact path="/create-trip">
+        <Route exact path="/admin/trips/create">
           <CreateTripPage />
         </Route>
 
