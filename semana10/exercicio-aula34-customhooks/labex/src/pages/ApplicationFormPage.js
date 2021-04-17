@@ -5,6 +5,42 @@ import { goToLastPage, goToListTripsPage } from '../router/coordinator';
 
 function ApplicationFormPage() {
   const history = useHistory();
+  const [apply, setApply] = useState({})
+  // useEffect(() => {    
+  //   postApplyTrip();
+  // }, [setApply])
+
+  const postApplyTrip = (id) => {
+    const body = 
+      {
+        name: "Astrodev",
+        age: 20,
+        applicationText: "Quero muuuuuuito ir!!!",
+        profession: "Chefe",
+        country: "Brasil"
+      } 
+    
+    axios
+    .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/lais-jesus-cruz/trips/${id}/apply`)
+    .then((res) => setApply(res.data))
+    .catch((err) => console.log (err))
+  };
+
+  const mapTrips = trips.map((trip) => {
+    return (
+      <TripDiv key={trip.id}>
+        <p>Nome: {trip.name}</p>
+        <p>Descrição: {trip.description}</p>
+        <p>Planeta: {trip.planet}</p>
+        <p>Duração: {trip.durationInDays}</p>
+        <p>Data: {trip.date}</p>
+      </TripDiv>
+    )
+  })
+
+
+
+
   return (
     <div>
       <p>ApplicationFormPage</p>

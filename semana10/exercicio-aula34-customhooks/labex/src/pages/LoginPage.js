@@ -9,6 +9,13 @@ function LoginPage() {
     <div>
       <p>LoginPage</p>
       <button onClick={() => goToLastPage(history)}>Voltar</button>
+      <hr/>
+      <br/>
+      <input placeholder="E-mail"/>
+      <input placeholder="Senha"/>
+      <button>Login</button>
+      <br/>
+      <hr/>
       <button onClick={() => goToAdminHomePage(history)}>Entrar</button>
     </div>
   );

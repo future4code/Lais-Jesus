@@ -9,6 +9,7 @@ function HomePage() {
   return (
     <div>
       <p>HomePage</p>
+      <p>Logo</p>
       <button onClick={() => goToListTripsPage(history)}>Ver viagens</button>
       <button onClick={() => goToLoginPage(history)}>Área do administrador</button>
     </div>

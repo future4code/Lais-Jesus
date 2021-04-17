@@ -35,15 +35,15 @@ function Router() {
         <Route exact path="/admin/trips/list">
           <AdminHomePage />
         </Route>
-        
-        <Route exact path="/admin/trips/:id">
-          <TripDetailsPage />
-        </Route>
-        
+
         <Route exact path="/admin/trips/create">
           <CreateTripPage />
         </Route>
 
+        <Route exact path="/admin/trips/:id">
+          <TripDetailsPage />
+        </Route>
+        
         <Route>
           <ErrorPage />
         </Route>
