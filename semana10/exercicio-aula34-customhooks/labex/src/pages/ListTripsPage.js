@@ -1,9 +1,10 @@
 import React, {useState, useEffect } from 'react';
 import styled from 'styled-components'
+import axios from 'axios';
 import { useHistory, useParams } from "react-router-dom";
 import { baseUrl } from "../parameters";
 import { goToApplicationFormPage, goToHomePage } from '../router/coordinator';
-import axios from 'axios';
+
 
 const TripDiv = styled.div `
   background-color: black;

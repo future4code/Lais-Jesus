@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 import { useHistory, useParams } from "react-router-dom";
 import { goToAdminHomePage, goToLastPage } from '../router/coordinator';
+import { useProtectedPage } from "../hooks/useProtectedPage";
 
 function CreateTripPage() {
+  useProtectedPage();
   const history = useHistory();
   return (
     <div>
