@@ -1,9 +1,11 @@
-
+import logo from './logo.svg';
+import './App.css';
+import Router from "./routes/Router"
 
 function App() {
   return (
-    <div>
-      <h1> Labeddit!</h1>
+    <div className="App">
+      <Router/>
     </div>
   );
 }
