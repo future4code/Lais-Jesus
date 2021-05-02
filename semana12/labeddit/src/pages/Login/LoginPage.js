@@ -1,28 +1,76 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import * as S from "./styled";
+import { Button } from "@material-ui/core"
 import { goToSignUpPage, goToFeedPage } from "../../routes/coordinator";
+import useForm from '../../hooks/useForm'
+
 
 const LoginPage = () => {
+  const [form, onChange, resetForm] = useForm({ email: "", password: "" })
   const history = useHistory();
+  
+  // const [isLoading, setIsLoading] = useState(false)
+
+  const onSubmitForm = (event) => {
+    event.preventDefault()
+    console.log("oi")
+    // login(form, clear, history, setRightButtonText, setIsLoading)
+  }
   return (
     <S.MainContainer>
       <S.ImgLogo>
       </S.ImgLogo>
       <S.Container>
           <S.Forms>
-              <form>
+              <form onSubmit={onSubmitForm}>
 
-                  <input/>
+                  <input name={"email"}
+                        value={form.email}
+                        onChange={onChange}
+                        label={"E-mail"}
+                        variant={"outlined"}
+                        fullWidth
+                        margin={"normal"}
+                        required
+                        type={"email"}
+                        placeholder={"Digite seu e-mail aqui"}
+                        
+                  />
 
-                  <input/>
+                  <input name={"password"}
+                        value={form.password}
+                        onChange={onChange}
+                        label={"Senha"}
+                        variant={"outlined"}
+                        fullWidth
+                        margin={"normal"}
+                        required
+                        type={"password"}
+                        placeholder={"Digite sua senha"}
+                  />
+
+                  <Button 
+                    variant="contained"
+                    color="primary"
+                    type={"submit"}
+                    fullWidth
+                  >
+                      Login
+                  </Button>
                   
               </form>
-
-              <button onClick={history.goToFeedPage}>Login</button>
           </S.Forms>
 
-          <button onClick={history.goToSignUpPage}>Cadastre-se</button>
+          <Button onClick={() => goToSignUpPage(history)}
+              type={"submit"}
+              fullWidth
+              variant={"text"}
+              color={"primary"}
+              text-decoration={"underline"}
+          >
+          <u>Clique aqui e Cadastre-se</u> 
+          </Button>
 
       </S.Container>
     </S.MainContainer>
