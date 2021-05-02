@@ -4,9 +4,12 @@ import * as S from "./styled";
 import { Button } from "@material-ui/core"
 import { goToSignUpPage, goToFeedPage } from "../../routes/coordinator";
 import useForm from '../../hooks/useForm'
+import { login } from "../../services/user"
+import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
 
 
 const LoginPage = () => {
+  useUnprotectedPage()
   const [form, onChange, resetForm] = useForm({ email: "", password: "" })
   const history = useHistory();
   
@@ -14,8 +17,7 @@ const LoginPage = () => {
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    console.log("oi")
-    // login(form, clear, history, setRightButtonText, setIsLoading)
+    login(form, resetForm, history)
   }
   return (
     <S.MainContainer>
@@ -50,7 +52,7 @@ const LoginPage = () => {
                         placeholder={"Digite sua senha"}
                   />
 
-                  <Button 
+                  <Button
                     variant="contained"
                     color="primary"
                     type={"submit"}
