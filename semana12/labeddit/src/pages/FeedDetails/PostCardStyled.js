@@ -1,41 +1,14 @@
-
 import styled from "styled-components";
 
-export const MainContainer = styled.div`
-    background-color: white;
-    
-`
-export const Container = styled.div`
-   
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-   
-`
-export const Forms = styled.form`
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    width:40%;
-    
-    
-    Button {
-        width: 67%;
-    }   
-`
-
 export const PostCard = styled.div`
-    background-color: #F27649;
     display:flex;
     flex-direction:column;
     justify-content:center;
     width: 60%;
     height:200px;
+    border: 1px solid black;
+    background-color: white;
     margin: 20px 0;
-    box-shadow: 3px 3px 5px black;
-    color:white;
 
 `
 export const DivTitle = styled.div`

@@ -6,6 +6,7 @@ import { goToSignUpPage, goToFeedPage } from "../../routes/coordinator";
 import useForm from '../../hooks/useForm'
 import { login } from "../../services/user"
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
+import TextField from '@material-ui/core/TextField'
 
 
 const LoginPage = () => {
@@ -20,14 +21,14 @@ const LoginPage = () => {
     login(form, resetForm, history)
   }
   return (
-    <S.MainContainer>
-      <S.ImgLogo>
-      </S.ImgLogo>
+    <S.MainContainer background-color="primaryColor" >
+      <div>
+        <S.ImgLogo src={"https://seeklogo.com/images/R/reddit-logo-3C1C5DDEB9-seeklogo.com.png"}/>
+      </div>      
       <S.Container>
-          <S.Forms>
-              <form onSubmit={onSubmitForm}>
-
-                  <input name={"email"}
+          <h1>LabEddit</h1>
+          <S.Forms onSubmit={onSubmitForm}>
+                  <TextField name={"email"}
                         value={form.email}
                         onChange={onChange}
                         label={"E-mail"}
@@ -40,7 +41,7 @@ const LoginPage = () => {
                         
                   />
 
-                  <input name={"password"}
+                  <TextField name={"password"}
                         value={form.password}
                         onChange={onChange}
                         label={"Senha"}
@@ -54,14 +55,12 @@ const LoginPage = () => {
 
                   <Button
                     variant="contained"
-                    color="primary"
+                    color={"primary"}
                     type={"submit"}
                     fullWidth
                   >
                       Login
                   </Button>
-                  
-              </form>
           </S.Forms>
 
           <Button onClick={() => goToSignUpPage(history)}

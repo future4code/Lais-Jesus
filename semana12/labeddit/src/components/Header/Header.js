@@ -13,6 +13,11 @@ import { goToLoginPage } from "../../routes/coordinator";
 export default function Header() {
   const history = useHistory();
 
+  const logout = () => {
+    localStorage.removeItem("token")
+    goToLoginPage(history)
+  }
+
   return (
     <div>
       <AppBar position="static">
@@ -22,7 +27,7 @@ export default function Header() {
           <Typography variant="h6">
             LabEddit
           </Typography>
-          <Button onClick={() => goToLoginPage(history) } color="inherit">Logout</Button>
+          <Button onClick={logout} color="inherit">Logout</Button>
         </StyledToolbar>
       </AppBar>
     </div>

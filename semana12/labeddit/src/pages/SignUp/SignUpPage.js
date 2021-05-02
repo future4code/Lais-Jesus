@@ -6,6 +6,7 @@ import { goToFeedPage } from "../../routes/coordinator";
 import useForm from '../../hooks/useForm'
 import { signUp } from "../../services/user"
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
+import TextField from '@material-ui/core/TextField'
 
 const SignUpPage = () => {
   useUnprotectedPage()
@@ -21,12 +22,10 @@ const SignUpPage = () => {
 
   return (
     <S.MainContainer>
-      <S.ImgLogo>
-      </S.ImgLogo>
+      <S.ImgLogo src={"https://seeklogo.com/images/R/reddit-logo-3C1C5DDEB9-seeklogo.com.png"}/>
       <S.Container>
-          <S.Forms>
-              <form onSubmit={onSubmitForm}>
-                    <input name={"username"}
+          <S.Forms onSubmit={onSubmitForm}>
+                    <TextField name={"username"}
                         value={form.username}
                         onChange={onChange}
                         label={"Nome"}
@@ -38,7 +37,7 @@ const SignUpPage = () => {
                         placeholder={"Digite seu nome aqui"}
                         
                   />
-                  <input name={"email"}
+                  <TextField name={"email"}
                         value={form.email}
                         onChange={onChange}
                         label={"E-mail"}
@@ -51,7 +50,7 @@ const SignUpPage = () => {
                         
                   />
 
-                  <input name={"password"}
+                  <TextField name={"password"}
                         value={form.password}
                         onChange={onChange}
                         label={"Senha"}
@@ -70,9 +69,7 @@ const SignUpPage = () => {
                     fullWidth
                   >
                       CADASTRAR
-                  </Button>
-                  
-              </form>            
+                  </Button>           
           </S.Forms>
       </S.Container>
     </S.MainContainer>

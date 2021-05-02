@@ -3,7 +3,7 @@ export const goToFeedPage = (history) => {
 };
   
 export const goToFeedDetailsPage = (history, id) => {
-    history.push("/detail/:id");
+    history.push(`/detail/${id}`);
 };
   
 export const goToLoginPage = (history) => {
