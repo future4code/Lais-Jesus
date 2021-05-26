@@ -1,11 +1,7 @@
-### EXERCÍCIOS DA AULA 47 (SEMANA 16)
+import { Request, Response } from "express";
+import app from "./app";
+import connection from "./connection"
 
-#### Exercício 1
-
-a) O raw devolve o resultado da query e outras informações em um array, mas o resultado que queremos está sempre na 1º posição, então podemos acessá-la pegando a primeira posição do array.
-
-b)
-```
 app.get('/actors', (req, res) => {
     try {
         const searchActor = async (name: string): Promise<any> => {
@@ -20,11 +16,7 @@ app.get('/actors', (req, res) => {
         res.status(500).send("An expected error")
     }
 });
-```
 
-c)
-
-```
 app.put("actors/"), (req: Request, res: Response) => {
     try {
         const countActors = async (gender: string): Promise<any> => {
@@ -40,4 +32,4 @@ app.put("actors/"), (req: Request, res: Response) => {
         res.status(500).send("An expected error")
     }
 });
-```
+
