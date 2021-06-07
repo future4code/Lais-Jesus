@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import connection from "../connection";
+import { generateId } from "../services/idGenerator";
 import { user } from "../types";
 
 export default async function createUser(
@@ -23,7 +24,7 @@ export default async function createUser(
          throw new Error('Email já cadastrado')
       }
 
-      const id: string = Date.now().toString()
+      const id: string = generateId();
 
       const newUser: user = { id, name, nickname, email, password }
 
@@ -33,11 +34,7 @@ export default async function createUser(
       res.status(201).send({ newUser })
 
    } catch (error) {
+      res.status(400).send({ message: error.message})
 
-      if (res.statusCode === 200) {
-         res.status(500).send({ message: "Internal server error" })
-      } else {
-         res.send({ message: error.message })
-      }
    }
 }
