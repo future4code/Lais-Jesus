@@ -72,3 +72,23 @@ export default async function createUser(
 }
 ```
 
+#### EXERCÍCIO 3 
+
+A.) Ela identifica um valor como uma string e garante que a chave JWT vai ser uma string.
+
+B.) 
+```
+export type authenticationData = {
+    id:string
+}
+
+export function generateToken(payload: authenticationData): string {
+    return JWT.sign (
+        payload,
+        "Jesus",
+        {
+            expiresIn: "2m"
+        }
+    )
+}
+```
