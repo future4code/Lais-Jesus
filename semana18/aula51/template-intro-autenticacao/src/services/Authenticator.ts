@@ -1,5 +1,7 @@
 import * as JWT from 'jsonwebtoken';
 import { resourceLimits } from 'worker_threads';
+import dotenv from 'dotenv'
+
 
 export type authenticationData = {
     id:string
@@ -8,7 +10,7 @@ export type authenticationData = {
 export function generateToken(payload: authenticationData): string {
     return JWT.sign (
         payload,
-        "Jesus",
+        String(process.env.JWT_KEY),
         {
             expiresIn: "2m"
         }
@@ -18,7 +20,7 @@ export function generateToken(payload: authenticationData): string {
 export function getTokenData(token:string): object {
     const result: authenticationData = JWT.verify (
         token,
-        "Jesus"
+        String(process.env.JWT_KEY)
     ) as authenticationData;
     return result;
 }

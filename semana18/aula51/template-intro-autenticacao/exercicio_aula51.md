@@ -92,3 +92,65 @@ export function generateToken(payload: authenticationData): string {
     )
 }
 ```
+
+#### EXERCÍCIO 4 
+
+A.) 
+```
+export default async function login(
+    req: Request,
+    res: Response
+) {
+
+    try {
+        const { email, password } = req.body;
+        if (!email) {
+            throw new Error("Please fill email field")
+        }
+
+        if (!password) {
+            throw new Error("Please fill password field")
+        }
+
+        const queryResult = await connection.raw(
+        `  SELECT * from to_do_list_users
+            where email = "${email}";
+        `)
+
+        const user = queryResult[0][0];
+
+        if(!user){
+            throw new Error("User not found")
+        }
+
+        if(user.password !== password){
+            throw new Error("Invalid Credentials")
+        }
+
+        const token: string = generateToken(
+            {
+               id: user.id
+         });  
+   
+         res.status(200).send({ token });
+
+    } catch (error) {
+        res.status(400).send({error: error.message});
+
+    }
+```
+
+B.) 
+```
+if ( !email || !email.includes("@") ) {
+         throw new Error("Preencha o campo de 'email' ou add um '@")
+      }
+```
+
+C.)
+
+```
+if ( password.length >= 6 ) {
+        throw new Error("Password deve ter no máximo 6 caracteres")
+     }
+```

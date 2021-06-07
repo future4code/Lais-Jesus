@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import connection from "../connection";
+import { generateToken } from "../services/Authenticator";
 import { generateId } from "../services/idGenerator";
 import { user } from "../types";
 
@@ -31,7 +32,13 @@ export default async function createUser(
       await connection('to_do_list_users')
          .insert(newUser)
 
-      res.status(201).send({ newUser })
+      const token: string = generateToken(
+         {
+            id: newUser.id
+         }
+      )
+
+      res.status(201).send({ token })
 
    } catch (error) {
       res.status(400).send({ message: error.message})
