@@ -16,6 +16,13 @@ export default async function createUser(
          res.statusCode = 422
          throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
       }
+      if (!email.includes("@") ) {
+         throw new Error("O campo de email precisa de um '@'")
+      }
+
+      if ( password.length >= 6 ) {
+        throw new Error("Password deve ter no máximo 6 caracteres")
+      }
 
       const [user] = await connection('to_do_list_users')
          .where({ email })

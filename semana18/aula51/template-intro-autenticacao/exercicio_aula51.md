@@ -97,54 +97,62 @@ export function generateToken(payload: authenticationData): string {
 
 A.) 
 ```
-export default async function login(
-    req: Request,
-    res: Response
-) {
+export default async function createUser(
+   req: Request,
+   res: Response
+): Promise<void> {
+   try {
 
-    try {
-        const { email, password } = req.body;
-        if (!email) {
-            throw new Error("Please fill email field")
-        }
+      const { name, nickname, email, password } = req.body
 
-        if (!password) {
-            throw new Error("Please fill password field")
-        }
+      if (!name || !nickname || !email || !password) {
+         res.statusCode = 422
+         throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
+      }
+      if (!email.includes("@") ) {
+         throw new Error("O campo de email precisa de um '@'")
+      }
 
-        const queryResult = await connection.raw(
-        `  SELECT * from to_do_list_users
-            where email = "${email}";
-        `)
+      if ( password.length >= 6 ) {
+        throw new Error("Password deve ter no máximo 6 caracteres")
+      }
 
-        const user = queryResult[0][0];
+      const [user] = await connection('to_do_list_users')
+         .where({ email })
 
-        if(!user){
-            throw new Error("User not found")
-        }
+      if (user) {
+         res.statusCode = 409
+         throw new Error('Email já cadastrado')
+      }
 
-        if(user.password !== password){
-            throw new Error("Invalid Credentials")
-        }
+      const id: string = generateId();
 
-        const token: string = generateToken(
-            {
-               id: user.id
-         });  
-   
-         res.status(200).send({ token });
+      const newUser: user = { id, name, nickname, email, password }
 
-    } catch (error) {
-        res.status(400).send({error: error.message});
+      await connection('to_do_list_users')
+         .insert(newUser)
 
-    }
+      const token: string = generateToken(
+         {
+            id: newUser.id
+         }
+      )
+
+      res.status(201).send({ token })
+
+   } catch (error) {
+      res.status(400).send({ message: error.message})
+
+   }
+}
 ```
 
 B.) 
 ```
-if ( !email || !email.includes("@") ) {
-         throw new Error("Preencha o campo de 'email' ou add um '@")
+if (!email.includes("@") ) {
+         throw new Error("O campo de email precisa de um '@'")
       }
+
 ```
 
 C.)

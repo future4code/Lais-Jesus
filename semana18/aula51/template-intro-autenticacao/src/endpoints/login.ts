@@ -11,15 +11,8 @@ export default async function login(
 
       const { email, password } = req.body
 
-      if ( !email || !email.includes("@") ) {
-         throw new Error("Preencha o campo de 'email' ou add um '@")
-      }
       if ( !password ) {
         throw new Error("Preencha o campo de 'password'")
-     }
-
-     if ( password.length >= 6 ) {
-        throw new Error("Password deve ter no máximo 6 caracteres")
      }
 
      const queryResult = await connection.raw (`
