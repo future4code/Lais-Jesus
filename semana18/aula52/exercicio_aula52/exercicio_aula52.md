@@ -113,3 +113,18 @@ const token: string = generateToken(
         }
     ); 
 ```
+
+### EXERCÍCIO 4
+
+**A.)** 
+```
+    const token = req.headers.authorization as string;
+    const verifiedToken = getTokenData(token)
+
+    if(verifiedToken.role !== ROLE.ADMIN ){
+         res.statusCode = 403
+         res.statusMessage = "Just admins can do this"
+         throw new Error()
+    }
+```
+
