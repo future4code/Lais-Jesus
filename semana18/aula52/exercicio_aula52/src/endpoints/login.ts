@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import connection from "../connection";
 import { generateToken } from "../services/Authenticator";
+import { compareHash } from "../services/hashManager";
 
 
 export default async function login(
@@ -27,6 +28,11 @@ export default async function login(
 
       if (!user) {
          throw new Error('Usuário não encontrado')
+      }
+      const passwordIsCorrect: boolean = compareHash(password, user.password)
+
+      if(!passwordIsCorrect) {
+         throw new Error ("Password is incorrect")
       }
 
     const token: string = generateToken(

@@ -32,3 +32,56 @@ export const compareHash = (
     return compareSync(plainText, cypherText)
 }
 ```
+
+
+______________________________________________________________________________________________________
+
+### EXERCÍCIO 2
+
+**A.)** 
+    O cadastro porque a senha já vai ser cadastrada no formato correto. Se modificar o endpoint de login primeiro ele vai comparar com a senha pura e não com o hash da senha.
+
+**B.)**
+
+```
+const newUser: user = { id, name, nickname, email, password: createHash(password) }
+```
+
+**C.)**
+
+```
+const passwordIsCorrect: boolean = compareHash(password, user.password)
+
+if(!passwordIsCorrect) {
+    throw new Error ("Password is incorrect")
+}
+```
+
+**D.)** 
+    Não porque esse endpoint não acessa a senha nem precisa da senha para acessá-lo.
+
+______________________________________________________________________________________________________
+
+### EXERCÍCIO 3
+
+**A.)** 
+    O cadastro porque a senha já vai ser cadastrada no formato correto. Se modificar o endpoint de login primeiro ele vai comparar com a senha pura e não com o hash da senha.
+
+**B.)**
+
+```
+const newUser: user = { id, name, nickname, email, password: createHash(password) }
+```
+
+**C.)**
+
+```
+const passwordIsCorrect: boolean = compareHash(password, user.password)
+
+if(!passwordIsCorrect) {
+    throw new Error ("Password is incorrect")
+}
+```
+
+**D.)** 
+    Não porque esse endpoint não acessa a senha nem precisa da senha para acessá-lo.

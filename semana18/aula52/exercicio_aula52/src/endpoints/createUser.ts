@@ -3,6 +3,7 @@ import connection from "../connection";
 import { generateToken } from "../services/Authenticator";
 import { generateId } from "../services/idGenerator";
 import { user } from "../types";
+import { createHash, compareHash} from "../services/hashManager"
 
 export default async function createUser(
    req: Request,
@@ -34,7 +35,7 @@ export default async function createUser(
 
       const id: string = generateId();
 
-      const newUser: user = { id, name, nickname, email, password }
+      const newUser: user = { id, name, nickname, email, password: createHash(password) }
 
       await connection('to_do_list_users')
          .insert(newUser)
