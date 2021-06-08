@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import connection from "../connection";
 import { generateToken } from "../services/Authenticator";
 import { generateId } from "../services/idGenerator";
-import { user } from "../types";
+import { user, ROLE } from "../types";
 import { createHash, compareHash} from "../services/hashManager"
 
 export default async function createUser(
@@ -11,9 +11,9 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { name, nickname, email, password } = req.body
+      const { name, nickname, email, password, role } = req.body
 
-      if (!name || !nickname || !email || !password) {
+      if (!name || !nickname || !email || !password || !role) {
          res.statusCode = 422
          throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
       }
@@ -35,14 +35,15 @@ export default async function createUser(
 
       const id: string = generateId();
 
-      const newUser: user = { id, name, nickname, email, password: createHash(password) }
+      const newUser: user = { id, name, nickname, email, password: createHash(password), role }
 
       await connection('to_do_list_users')
          .insert(newUser)
 
       const token: string = generateToken(
          {
-            id: newUser.id
+            id: newUser.id,
+            role
          }
       )
 

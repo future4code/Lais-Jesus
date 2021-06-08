@@ -65,23 +65,51 @@ ________________________________________________________________________________
 ### EXERCÍCIO 3
 
 **A.)** 
-    O cadastro porque a senha já vai ser cadastrada no formato correto. Se modificar o endpoint de login primeiro ele vai comparar com a senha pura e não com o hash da senha.
+```
+ALTER TABLE to_do_list_users
+ADD role ENUM('NORMAL', 'ADMIN') DEFAULT 'NORMAL';
+```
 
 **B.)**
 
 ```
-const newUser: user = { id, name, nickname, email, password: createHash(password) }
-```
-
-**C.)**
-
-```
-const passwordIsCorrect: boolean = compareHash(password, user.password)
-
-if(!passwordIsCorrect) {
-    throw new Error ("Password is incorrect")
+export type authenticationData = {
+    id:string
+    role: ROLE
 }
 ```
 
+**C.)**
+Partes alteradas do signUp:
+```
+const { name, nickname, email, password, role } = req.body
+
+if (!name || !nickname || !email || !password || !role) {
+    res.statusCode = 422
+    throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
+}
+const newUser: user = { id, name, nickname, email, password: createHash(password), role }
+
+      await connection('to_do_list_users')
+         .insert(newUser)
+
+const token: string = generateToken(
+    {
+        id: newUser.id,
+        role
+    }
+)
+```
+
+
+
 **D.)** 
-    Não porque esse endpoint não acessa a senha nem precisa da senha para acessá-lo.
+No token de login:
+```
+const token: string = generateToken(
+        {
+           id: user.id,
+           role: user.role
+        }
+    ); 
+```

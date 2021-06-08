@@ -1,10 +1,12 @@
 import * as JWT from 'jsonwebtoken';
 import { resourceLimits } from 'worker_threads';
 import dotenv from 'dotenv'
+import { ROLE } from "../types";
 
 
 export type authenticationData = {
     id:string
+    role: ROLE
 }
 
 export function generateToken(payload: authenticationData): string {
