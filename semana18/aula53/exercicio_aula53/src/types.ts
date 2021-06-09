@@ -11,3 +11,10 @@ export enum ROLE{
    NORMAL = "NORMAL",
    ADMIN = "ADMIN"
 }
+
+export type userAddress = {
+   neighborhood: string
+   street: string
+   city: string
+   state: string
+}

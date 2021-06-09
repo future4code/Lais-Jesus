@@ -3,16 +3,15 @@ import editUser from './endpoints/editUser'
 import createUser from './endpoints/createUser'
 import { generateId } from "./services/idGenerator"
 import { createHash, compareHash} from "./services/hashManager"
-
-console.log(generateId())
-
-const hash1 = createHash("Senha")
-const hash2 = createHash("Senha")
-const compare1 = compareHash(hash1, hash2)
-const compare2 = compareHash("Senha", hash2)
-
-console.log(compare1, compare2)
+import { getTokenData } from "./services/Authenticator";
+import { getAddressInfo } from "./services/getAddressInfo"
 
 
 app.post('/user/signup', createUser)
 app.put('/user/edit/:id', editUser)
+
+// const verifiedToken = getTokenData( "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjczZmM0ZmQ3LWYzNGMtNDU1OS05YzE5LWUwM2YzZWY3YzBhNiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzI3ODg0MywiZXhwIjoxNjIzMjg2MDQzfQ.T8jC5ZdWhbpcm0oEn_COu29bazTU-4ZOrVYoE4xWV1o" )
+
+// console.log(verifiedToken)
+
+getAddressInfo('50680000').then(console.log)

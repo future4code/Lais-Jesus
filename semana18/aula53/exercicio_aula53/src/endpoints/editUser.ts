@@ -9,14 +9,14 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const token = req.headers.authorization as string;
-      const verifiedToken = getTokenData(token)
+      // const token = req.headers.authorization as string;
+      // const verifiedToken = getTokenData(token)
 
-      if(verifiedToken.role !== ROLE.ADMIN ){
-         res.statusCode = 403
-         res.statusMessage = "Just admins can do this"
-         throw new Error()
-      }
+      // if(verifiedToken.role !== ROLE.ADMIN ){
+      //    res.statusCode = 403
+      //    res.statusMessage = "Just admins can do this"
+      //    throw new Error()
+      // }
       
       const { name, nickname } = req.body
 
@@ -26,9 +26,9 @@ export default async function createUser(
          throw new Error()
       }
 
-      await connection('to_do_list_users')
-         .update({ name, nickname })
-         .where({ id: verifiedToken.id })
+      // await connection('to_do_list_users')
+      //    .update({ name, nickname })
+      //    .where({ id: verifiedToken.id })
 
       res.end()
 
