@@ -1,21 +1,12 @@
-export type authenticationData = {
-   id: string,
-   role: string
+export enum USER_ROLES{
+   NORMAL = "NORMAL",
+   ADMIN = "ADMIN"
 }
 
-export type userCredentials = {
+export type user = {
+   id: string
    email: string
    password: string
-}
-
-export type userPersonalInfo = {
    name: string
-   nickname: string
+   role: string
 }
-
-export enum userRole {
-   ADMIN = "ADMIN",
-   NORMAL = "NORMAL"
-}
-
-export type user = {id: string, email: string, name: string, nickname: string, password: string, role: userRole}
