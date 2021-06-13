@@ -5,7 +5,7 @@ import { generateId } from "../services/idGenerator";
 import { user, USER_ROLE } from "../types";
 import { createHash, compareHash} from "../services/hashManager"
 
-export default async function aignup(
+export default async function signup(
    req: Request,
    res: Response
 ): Promise<void> {
