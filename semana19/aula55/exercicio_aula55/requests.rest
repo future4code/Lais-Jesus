@@ -1,0 +1,49 @@
+# @name signup
+
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name": "João", 
+   "email": "jola@g.com",
+   "password": "batataaaa",
+   "role": "NORMAL"
+}
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email": "paola@g.com",
+   "password": "batat"
+}
+
+###
+
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMzZiMTllLThiYTItNDljYS1iMjJiLTdmOWM2MTYzNDhlMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzU2MTg1MSwiZXhwIjoxNjIzNzM0NjUxfQ.UmoUzV1-SMT-jFg6r7AXXVKv0VwSCPjXmGzV7cCriKg
+
+###
+
+GET http://localhost:3003/user/1f328b19-3b5b-4fea-bbd0-4f382674f5a8
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMzZiMTllLThiYTItNDljYS1iMjJiLTdmOWM2MTYzNDhlMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzU2MTg1MSwiZXhwIjoxNjIzNzM0NjUxfQ.UmoUzV1-SMT-jFg6r7AXXVKv0VwSCPjXmGzV7cCriKg
+
+###
+
+POST http://localhost:3003/recipe
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMzZiMTllLThiYTItNDljYS1iMjJiLTdmOWM2MTYzNDhlMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzU2MTg1MSwiZXhwIjoxNjIzNzM0NjUxfQ.UmoUzV1-SMT-jFg6r7AXXVKv0VwSCPjXmGzV7cCriKg
+
+{
+   "title": "Batata gourmetizada",
+   "description": "Compre as batatas no app da sua preferência, pague uma boa gorjeta pro entregador e depois tá pronto pra comer"
+}
+
+###
+
+GET http://localhost:3003/recipe/f2cb6942-a4fc-49e6-9265-9150ace86345
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMzZiMTllLThiYTItNDljYS1iMjJiLTdmOWM2MTYzNDhlMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzU2MTg1MSwiZXhwIjoxNjIzNzM0NjUxfQ.UmoUzV1-SMT-jFg6r7AXXVKv0VwSCPjXmGzV7cCriKg
