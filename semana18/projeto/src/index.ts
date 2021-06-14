@@ -5,7 +5,6 @@ import myProfile from "./endpoints/myProfile";
 import yourProfile from "./endpoints/yourProfile";
 import createRecipe from "./endpoints/createRecipe";
 import getRecipe from "./endpoints/getRecipe";
-// import login from "./endpoints/login";
 
 app.post('/signup', signup);
 app.post('/login', login);

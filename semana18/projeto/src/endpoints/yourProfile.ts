@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { userInfo } from "os";
 import connection from "../connection";
 import { getTokenData } from "../services/authenticator";
 
