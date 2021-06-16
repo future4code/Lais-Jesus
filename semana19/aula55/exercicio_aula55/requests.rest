@@ -1,0 +1,25 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+	"name": " Scott",
+	"email": "michael@dundermifflin.com",
+	"password": "thebossyyy",
+	"role": "ADMIN"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "paola@g.com",
+   "password": "batat"
+}
+
+###
+
+//Token pra teste
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmMzZiMTllLThiYTItNDljYS1iMjJiLTdmOWM2MTYzNDhlMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYyMzcxMDgyMywiZXhwIjoxNjIzODgzNjIzfQ.1lBQIq4edcxhGsrPQMdMI9Xxs0UnwFUurbIVyBUypBg
