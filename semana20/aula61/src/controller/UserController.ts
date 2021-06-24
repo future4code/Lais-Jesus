@@ -29,6 +29,24 @@ export class UserController {
          res.status(statusCode || 400).send({ message });
       }
    }
+
+   public async getUser(req: Request, res: Response) {
+      try {
+         const token = req.headers.authorization as string;
+
+         const { id } = req.params
+
+         const user = await userBusiness.getUser(id, token)
+
+         const result = await userBusiness.getUser(
+            id, token
+         );
+         res.status(200).send(result);
+      } catch (error) {
+         const { statusCode, message } = error
+         res.status(statusCode || 400).send({ message });
+      }
+   }
 }
 
 export default new UserController()
