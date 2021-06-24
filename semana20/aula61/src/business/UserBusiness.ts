@@ -96,9 +96,9 @@ export class UserBusiness {
       try {
          const verifiedToken = this.tokenGenerator.verify(token);
          if (!verifiedToken) {
-            throw new CustomError(400, "User not logged");
+            throw new CustomError(401, "User unauthorized");
          }
-         const resultUser = await this.userDatabase.getUserById(id)
+         const resultUser = await this.userDatabase.getUser(id)
 
          if (!resultUser) {
             throw new CustomError(404, "User not found");

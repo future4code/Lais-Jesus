@@ -16,7 +16,7 @@ export class UserDatabase {
       }
    }
 
-   public async getUserById(id: string): Promise<User | undefined> {
+   public async getUser(id: string): Promise<User | undefined> {
       switch (id) {
          case "id_mock_admin":
             return userMockAdmin
@@ -25,6 +25,7 @@ export class UserDatabase {
          default:
             return undefined
       }
+      
    }
 
    public async getAllUsers(): Promise<User[]> {

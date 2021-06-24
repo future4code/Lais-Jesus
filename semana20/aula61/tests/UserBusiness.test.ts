@@ -5,11 +5,12 @@ import hashGeneratorMock from "./mocks/hashGeneratorMock"
 import idGeneratorMock from "./mocks/idGeneratorMock"
 import tokenGeneratorMock from "./mocks/tokenGeneratorMock"
 import userDatabaseMock from "./mocks/UserDatabaseMock"
+import { userMockAdmin } from "./mocks/UserMock"
 
 const userBusinessMock = new UserBusiness(
   idGeneratorMock,
   hashGeneratorMock,
-  userDatabaseMock as UserDatabase,
+  userDatabaseMock as unknown as UserDatabase,
   tokenGeneratorMock
 )
 
@@ -143,6 +144,42 @@ describe("UserBusiness", () => {
         )
 
         expect(accessToken).toBe("token_mock")
+        
+      } catch (error) {
+        console.log(error.message)
+      }
+    })
+  })
+  describe("getUser", () => {
+    test("Should catch error when user is not registered", async () => {
+
+      try {
+        await userBusinessMock.getUser(
+          "test",
+          ""
+        )
+        
+      } catch (error) {
+        expect(error.statusCode).toBe(404)
+        expect(error.message).toBe("User not found")
+      }
+    })
+
+    test("Should return profile user on sucessful getUser", async () => {
+
+
+      try {
+        const resultInfo  = await userBusinessMock.getUser(
+          "id_mock_admin",
+          ""
+        )
+
+        expect(resultInfo).toEqual({
+          id: resultInfo.id,
+          name: resultInfo.name,
+          email: resultInfo.email,
+          role: resultInfo.role
+        })
         
       } catch (error) {
         console.log(error.message)

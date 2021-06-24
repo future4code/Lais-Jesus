@@ -46,7 +46,7 @@ export class UserDatabase extends BaseDataBase {
       }
    }
 
-   public async getUserById(id: string): Promise<User | undefined> {
+   public async getUser(id: string): Promise<User | undefined> {
       try {
          const result = await BaseDataBase.connection.raw(`
             SELECT * from ${this.tableName} WHERE id = '${id}'
